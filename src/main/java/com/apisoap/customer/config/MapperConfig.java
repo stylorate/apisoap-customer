@@ -30,9 +30,6 @@ public class MapperConfig {
                     @Override
                     protected void configure() {
                         skip(destination.getIdCustomer());
-
-//                        map(source.getBirthDate().toGregorianCalendar().getTime(), destination.getBirthDate());
-//                        map(source.getBondingDate().toGregorianCalendar().getTime(), destination.getBondingDate());
 //                        using(conv).map(source.getBondingDate()).setBondingDate(null);
 //                        using(conv).map(source.getBondingDate()).setBirthDate(null);
                     }

@@ -19,13 +19,13 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "ENTITY_SEQ")
     @Column(name = "id_customer", updatable = false, nullable = false)
     private int idCustomer;
-//    @NotBlank(message = "Name is mandatory")
+    @NotBlank(message = "Name is mandatory")
     private String name;
-//    @NotBlank(message = "LastName is mandatory")
+    @NotBlank(message = "LastName is mandatory")
     private String lastName;
-//    @NotBlank(message = "Document type is mandatory")
+    @NotBlank(message = "Document type is mandatory")
     private String documentType;
-//    @NotBlank(message = "IdCard is mandatory")
+    @NotBlank(message = "IdCard is mandatory")
     private String documentNumber;
     //    @NotBlank(message = "BirthDate is mandatory")
     @Temporal(TemporalType.DATE)
@@ -33,7 +33,6 @@ public class Customer {
     //    @NotBlank(message = "BondingDate is mandatory")
     @Temporal(TemporalType.DATE)
     private Date bondingDate;
-//    @NotBlank(message = "Position is mandatory")
     private String position;
 //    @NotBlank(message = "Salary is mandatory")
     private Double salary;

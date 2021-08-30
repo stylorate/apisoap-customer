@@ -33,7 +33,6 @@ public class CustomerEndpoint {
     @ResponsePayload
     public GetCustomerResponse createOrUpdate(@RequestPayload GetCustomerRequest request) {
         log.info("Into endpoint");
-        log.info("Date: " + request.getCustomer().getBondingDate());
         GetCustomerResponse response = new GetCustomerResponse();
         response.setCustomer(mapper.map(service.createOrUpdate(mapper.map(request.getCustomer(), Customer.class)
                 , request.getCustomer())

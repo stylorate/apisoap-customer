@@ -27,14 +27,8 @@ public class CustomerService {
         log.info("into Service");
         customer.setBondingDate(req.getBondingDate().toGregorianCalendar().getTime());
         customer.setBirthDate(req.getBirthDate().toGregorianCalendar().getTime());
-        log.info("after: " + customer.getBirthDate());
-        log.info("after: " + customer.getBondingDate());
-//        String pattern = "yyyy-MM-dd";
-//        String pattern2 = "yyyy-MM-dd HH:mm:ss";
         Optional<Customer> opt = repository.findByDocumentNumber(customer.getDocumentNumber());
-        log.info("after query " );
         if(opt.isPresent()){
-            log.info("Entra if " );
             mapper.map(customer, opt.get());
             return repository.save(opt.get());
         }
