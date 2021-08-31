@@ -17,6 +17,18 @@
         </xs:complexType>
     </xs:element>
 
+    <xs:element name="getCustomerListRequest">
+        <xs:complexType/>
+    </xs:element>
+
+    <xs:element name="getCustomerListResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" maxOccurs="1" name="customer" type="tns:listCustomer"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
     <xs:complexType name="customer">
         <xs:sequence>
             <xs:element name="idCustomer" type="xs:int"/>
@@ -31,4 +43,9 @@
         </xs:sequence>
     </xs:complexType>
 
+    <xs:complexType name="listCustomer">
+        <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="listCustomer" type="tns:customer"/>
+        </xs:sequence>
+    </xs:complexType>
 </xs:schema>
